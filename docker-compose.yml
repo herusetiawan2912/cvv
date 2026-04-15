@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build:
+      context: .
+      args:
+        - VITE_BLOGGER_BLOG_ID=${VITE_BLOGGER_BLOG_ID}
+    ports:
+      - "5000:3000"
+    environment:
+      - NODE_ENV=production
+      - VITE_BLOGGER_BLOG_ID=${VITE_BLOGGER_BLOG_ID}
+    restart: always
